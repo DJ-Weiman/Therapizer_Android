@@ -12,4 +12,17 @@
     <string name="welcome_to">Welcome to</string>
     <string name="Title_name">Therapizer</string>
     <string name="sign_in_to_your_account_text">Sign in to your account</string>
+    <string name="email_text">Email</string>
+    <string name="email_hint_text">user@example.com</string>
+    <string name="password_text">Password</string>
+    <string name="no_acount_text">Don\'t have an account?</string>
+    <string name="sign_up_text">Sign Up</string>
+    <string name="sign_up_details_text">Please enter the following details</string>
+    <string name="f_name_text">First Name</string>
+    <string name="first_name_hint">John</string>
+    <string name="last_name_text">Last Name</string>
+    <string name="last_name_hint">Doe</string>
+    <string name="confirm_password_text">Confirm Password</string>
+    <string name="have_account_text">Already have an account?</string>
+    <string name="sign_in_text">Sign In</string>
 </resources>
