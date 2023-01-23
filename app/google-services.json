@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "521743025688",
+    "project_id": "therapizer-f1276",
+    "storage_bucket": "therapizer-f1276.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521743025688:android:1801d9c27b83c1c3cbe56d",
+        "android_client_info": {
+          "package_name": "com.example.therapyizer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521743025688-ov20m0k34pf869qte4ac7vfc7jacfcm7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7tmM-aQNWoZ9AwUYpsGt-PowA2fwGoRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521743025688-ov20m0k34pf869qte4ac7vfc7jacfcm7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

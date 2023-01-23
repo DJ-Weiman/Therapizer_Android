@@ -1,4 +1,4 @@
-package com.example.therapyizer;
+package com.example.therapyizer.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.therapyizer.R;
 import com.example.therapyizer.databinding.ActivitySignUpBinding;
 
 public class SignUpActivity extends AppCompatActivity {

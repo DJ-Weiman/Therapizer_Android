@@ -1,7 +1,8 @@
-package com.example.therapyizer;
+package com.example.therapyizer.activities;
 
 import android.os.Bundle;
 
+import com.example.therapyizer.R;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
