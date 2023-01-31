@@ -120,17 +120,32 @@
 
             </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/signInButton"
+            <FrameLayout
+                android:id="@+id/signInButtonFrame"
                 android:layout_width="match_parent"
-                android:layout_height="40sp"
-                android:layout_marginStart="20sp"
-                android:layout_marginTop="20sp"
-                android:layout_marginEnd="20sp"
-                android:includeFontPadding="false"
-                android:text="Sign In"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@+id/cardSignIn" />
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/cardSignIn">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/signInButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:layout_marginStart="20sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginEnd="20sp"
+                    android:includeFontPadding="false"
+                    android:text="Sign In"
+                    android:textSize="16sp" />
+
+                <ProgressBar
+                    android:id="@+id/signInProgressBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="40sp"
+                    android:layout_marginTop="20sp"
+                    android:visibility="invisible"
+                    />
+
+            </FrameLayout>
 
             <TextView
                 android:id="@+id/noAccountTextView"
@@ -140,7 +155,7 @@
                 android:gravity="center"
                 android:text="@string/no_acount_text"
                 android:textSize="18sp"
-                app:layout_constraintTop_toBottomOf="@+id/signInButton" />
+                app:layout_constraintTop_toBottomOf="@+id/signInButtonFrame" />
 
             <TextView
                 android:id="@+id/signUpText"
