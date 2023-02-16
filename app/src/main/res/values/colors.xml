@@ -11,8 +11,11 @@
     <color name="customBlue">#0943B8</color>
     <color name="customBlueVariant">#2762DA</color>
 
-    <color name="backgroundColor">#F8F6F6</color>
+    <color name="backgroundColor">#F5F6FD</color>
     
     <color name="colorMeetingInvitationStart">#4004BB</color>
     <color name="colorMeetingInvitationEnd">#8A1AAA</color>
+
+    <color name="appThemePurple">#BE83F3</color>
+
 </resources>

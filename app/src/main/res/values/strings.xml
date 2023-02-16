@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TherapyIzer</string>
+    <string name="app_name">REMADDICT</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -28,4 +28,7 @@
     <string name="sign_out_text">Sign Out</string>
     <string name="incoming_meeting_invitation">Incoming Meeting invitation</string>
     <string name="sending_meeting_invitation">Sending Meeting Invitation</string>
+    <string name="welcome_screen_text">The ideal e-solution to overcome substance use disorder</string>
+    <string name="login_text">Login</string>
+    <string name="register_text">Register</string>
 </resources>

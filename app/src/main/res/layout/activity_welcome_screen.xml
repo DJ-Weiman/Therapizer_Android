@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".activities.WelcomeScreenActivity"
+        android:background="@color/backgroundColor">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30sp"
+            android:gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="20sp"
+                android:layout_height="20sp"
+                android:backgroundTint="@color/appThemePurple"
+                app:cardCornerRadius="4sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12sp"
+                android:text="@string/app_name"
+                android:fontFamily="@font/nunito_extra_bold_font"
+                android:textColor="@color/black"
+                android:textSize="25sp"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="265sp"
+            android:layout_height="353sp"
+            android:src="@drawable/welcome_screen_img"
+            android:layout_gravity="center"
+            android:layout_marginTop="80sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_screen_text"
+            android:layout_marginTop="40sp"
+            android:fontFamily="@font/nuniot_semi_bold_font"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="@color/black"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/loginButton"
+            android:layout_width="300sp"
+            android:layout_height="60sp"
+            android:layout_gravity="center"
+            android:layout_marginTop="60sp"
+            app:cardCornerRadius="12sp"
+            app:cardElevation="0sp"
+            android:backgroundTint="@color/appThemePurple">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login_text"
+                android:layout_gravity="center"
+                android:fontFamily="@font/nunito_bold_font"
+                android:textSize="18sp"
+                android:textColor="@color/white"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <FrameLayout
+            android:id="@+id/registerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20sp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="300sp"
+                android:layout_height="60sp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="16sp"
+                android:backgroundTint="@color/appThemePurple"
+                app:cardElevation="0sp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="297sp"
+                android:layout_height="57sp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="16sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_text"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/nunito_bold_font"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </FrameLayout>
+
+
+
+    </LinearLayout>
+</layout>
