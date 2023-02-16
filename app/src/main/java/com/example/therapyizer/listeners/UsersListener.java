@@ -1,4 +1,11 @@
 package com.example.therapyizer.listeners;
 
-public class UserListener {
+import com.example.therapyizer.models.User;
+
+public interface UsersListener {
+
+    void initiateVideoMeeting(User user);
+
+    void initiateAudioMeeting(User user);
+
 }

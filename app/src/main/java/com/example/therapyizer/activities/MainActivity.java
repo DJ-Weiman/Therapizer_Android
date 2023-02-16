@@ -12,6 +12,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import com.example.therapyizer.R;
 import com.example.therapyizer.adapters.UsersAdapter;
 import com.example.therapyizer.databinding.ActivityMainBinding;
+import com.example.therapyizer.listeners.UsersListener;
 import com.example.therapyizer.models.User;
 import com.example.therapyizer.utilities.Constants;
 import com.example.therapyizer.utilities.PreferenceManager;
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements UsersListener {
 
     private AppBarConfiguration appBarConfiguration;
     private PreferenceManager preferenceManager;
@@ -57,22 +58,25 @@ public class MainActivity extends AppCompatActivity {
         });
 
         users = new ArrayList<>();
-        usersAdapter = new UsersAdapter(users);
+        usersAdapter = new UsersAdapter(users, this);
         binding.usersRecyclerView.setAdapter(usersAdapter);
+
+        binding.swipeRefreshLayout.setOnRefreshListener(this::getUsers);
 
         getUsers();
 
     }
 
     private void getUsers() {
-        binding.usersProgressBar.setVisibility(View.VISIBLE);
+        binding.swipeRefreshLayout.setRefreshing(true);
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         database.collection(Constants.KEY_COLLECTION_USERS)
                 .get()
                 .addOnCompleteListener(task -> {
-                    binding.usersProgressBar.setVisibility(View.GONE);
+                    binding.swipeRefreshLayout.setRefreshing(false);
                     String myUserId = preferenceManager.getString(Constants.KEY_USER_ID);
                     if (task.isSuccessful() && task.getResult() != null) {
+                        users.clear();
                         for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
                             if (myUserId.equals(documentSnapshot.getId())) {
                                 continue;
@@ -128,4 +132,33 @@ public class MainActivity extends AppCompatActivity {
                 .addOnFailureListener(e -> Toast.makeText(MainActivity.this, "There was an issue Signing out", Toast.LENGTH_SHORT).show());
     }
 
+    @Override
+    public void initiateVideoMeeting(User user) {
+        if (user.token == null || user.token.trim().isEmpty()){
+            Toast.makeText(this,
+                    user.firstName + " " + user.lastName + "is not available for a meeting",
+                    Toast.LENGTH_SHORT
+            ).show();
+        }else{
+            Intent intent = new Intent(getApplicationContext(), OutgoingInvitationActivity.class);
+            intent.putExtra("user", user);
+            intent.putExtra("type", "video");
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public void initiateAudioMeeting(User user) {
+        if (user.token == null || user.token.trim().isEmpty()){
+            Toast.makeText(this,
+                    user.firstName + " " + user.lastName + "is not available for a meeting",
+                    Toast.LENGTH_SHORT
+            ).show();
+        }else{
+            Toast.makeText(this,
+                    "Audio meeting with " + user.firstName + " " + user.lastName,
+                    Toast.LENGTH_SHORT
+            ).show();
+        }
+    }
 }

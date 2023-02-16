@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.therapyizer.R;
 import com.example.therapyizer.databinding.ItemContainerUserBinding;
+import com.example.therapyizer.listeners.UsersListener;
 import com.example.therapyizer.models.User;
 
 import java.util.List;
@@ -19,9 +20,11 @@ import java.util.List;
 public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHolder>{
 
     private List<User> users;
+    private UsersListener usersListener;
 
-    public UsersAdapter(List<User> users){
+    public UsersAdapter(List<User> users, UsersListener usersListener){
         this.users = users;
+        this.usersListener = usersListener;
     }
 
     @NonNull
@@ -47,7 +50,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
     }
 
 
-    static class UserViewHolder extends RecyclerView.ViewHolder {
+    class UserViewHolder extends RecyclerView.ViewHolder {
 
         TextView textFirstChar, textUsername, textEmail;
         ImageView imageAudioMeeting, imageVideoMeeting;
@@ -66,6 +69,8 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
              textFirstChar.setText(user.firstName.substring(0,1));
              textUsername.setText(String.format("%s %s", user.firstName, user.lastName));
              textEmail.setText(user.email);
+             imageAudioMeeting.setOnClickListener(view -> usersListener.initiateAudioMeeting(user));
+             imageVideoMeeting.setOnClickListener(view -> usersListener.initiateVideoMeeting(user));
         }
 
     }

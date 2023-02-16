@@ -26,4 +26,6 @@
     <string name="have_account_text">Already have an account?</string>
     <string name="sign_in_text">Sign In</string>
     <string name="sign_out_text">Sign Out</string>
+    <string name="incoming_meeting_invitation">Incoming Meeting invitation</string>
+    <string name="sending_meeting_invitation">Sending Meeting Invitation</string>
 </resources>
