@@ -1,4 +1,4 @@
-package com.example.therapyizer.activities;
+package com.example.therapyizer.activities.registration;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.therapyizer.R;
+import com.example.therapyizer.activities.registration.PatientRegistrationActivity;
+import com.example.therapyizer.activities.registration.ProfessionalRegistrationActivity;
 import com.example.therapyizer.databinding.ActivityUserTypeSelectionBinding;
 
 public class UserTypeSelectionActivity extends AppCompatActivity {

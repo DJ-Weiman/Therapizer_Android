@@ -5,11 +5,11 @@ import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.therapyizer.R;
+import com.example.therapyizer.activities.registration.UserTypeSelectionActivity;
 import com.example.therapyizer.databinding.ActivityWelcomeScreenBinding;
 
 public class WelcomeScreenActivity extends AppCompatActivity {

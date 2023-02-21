@@ -1,4 +1,4 @@
-package com.example.therapyizer.activities;
+package com.example.therapyizer.activities.registration;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
