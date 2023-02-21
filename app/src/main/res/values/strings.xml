@@ -31,4 +31,21 @@
     <string name="welcome_screen_text">The ideal e-solution to overcome substance use disorder</string>
     <string name="login_text">Login</string>
     <string name="register_text">Register</string>
+    <string name="back_button_image_text">back_button_image</string>
+    <string name="user_name_text">Username</string>
+    <string name="user_selection_text">Who are you?</string>
+    <string name="user_selection_patient_text">I\'m looking for\ntreatment</string>
+    <string name="continue_text">Continue</string>
+    <string name="user_selection_professional_text">I\'m a health\nprofessional</string>
+    <string name="patient_registration_top_text">Your first step to recovery</string>
+    <string name="general_information_text">General Information</string>
+    <string name="username_hint_text">This will be your identity</string>
+    <string name="password_hint_text"><![CDATA[Use 9 or more characters, letters, numbers & symbols]]></string>
+    <string name="next_text">Next</string>
+    <string name="credentials_text">Credentials</string>
+    <string name="first_name_text">First name</string>
+    <string name="health_professional_registration_text">Health Professional</string>
+    <string name="profession_text">Profession</string>
+    <string name="name_of_hospital_institute_text">Name of Hospital/Institute</string>
+    <string name="registration_code_text">Registration code</string>
 </resources>

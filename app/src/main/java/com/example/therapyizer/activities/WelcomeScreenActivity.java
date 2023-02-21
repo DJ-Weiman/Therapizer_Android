@@ -34,7 +34,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
         });
 
         binding.registerButton.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), SignUpActivity.class);
+            Intent intent = new Intent(getApplicationContext(), UserTypeSelectionActivity.class);
             startActivity(intent);
         });
     }

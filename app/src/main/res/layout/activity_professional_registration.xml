@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        android:orientation="vertical"
+        tools:context=".activities.ProfessionalRegistrationActivity"
+        android:weightSum="12">
+
+        <LinearLayout
+            android:id="@+id/topActionBarLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="20sp"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/topActionBar"
+                layout="@layout/top_title_bar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginTop="45sp"
+                android:fontFamily="@font/nunito_bold_font"
+                android:text="@string/health_professional_registration_text"
+                android:textColor="@color/black"
+                android:textSize="23sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_marginTop="50sp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/generalInformationMarker"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="25sp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="8sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/credentialsMarker"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="5sp"
+                    android:layout_marginEnd="25sp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="8sp" />
+
+            </LinearLayout>
+
+            <ScrollView
+                android:id="@+id/generalInformationScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45sp"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25sp"
+                    android:layout_marginEnd="25sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:text="@string/general_information_text"
+                        android:textColor="@color/black"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50sp"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:text="@string/first_name_text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="60sp"
+                        android:layout_marginTop="8sp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="12sp"
+                        app:cardElevation="0sp">
+
+                        <EditText
+                            android:id="@+id/firstNameInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:includeFontPadding="false"
+                            android:padding="5sp"
+                            android:textSize="18sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25sp"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:text="@string/last_name_text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="60sp"
+                        android:layout_marginTop="8sp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="12sp"
+                        app:cardElevation="0sp">
+
+                        <EditText
+                            android:id="@+id/lastNameInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:includeFontPadding="false"
+                            android:padding="5sp"
+                            android:textSize="18sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25sp"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:text="@string/email_text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="60sp"
+                        android:layout_marginTop="8sp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="12sp"
+                        app:cardElevation="0sp">
+
+                        <EditText
+                            android:id="@+id/emailInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:includeFontPadding="false"
+                            android:inputType="textEmailAddress"
+                            android:padding="5sp"
+                            android:textSize="18sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25sp"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:text="@string/profession_text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="60sp"
+                        android:layout_marginTop="8sp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="12sp"
+                        app:cardElevation="0sp">
+
+                        <EditText
+                            android:id="@+id/professionInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:includeFontPadding="false"
+                            android:padding="5sp"
+                            android:textSize="18sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25sp"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:text="@string/name_of_hospital_institute_text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="60sp"
+                        android:layout_marginTop="8sp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="12sp"
+                        app:cardElevation="0sp">
+
+                        <EditText
+                            android:id="@+id/hospitalInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:includeFontPadding="false"
+                            android:padding="5sp"
+                            android:textSize="18sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <ScrollView
+                android:id="@+id/credentialsScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45sp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25sp"
+                    android:layout_marginEnd="25sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:text="@string/credentials_text"
+                        android:textColor="@color/black"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50sp"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:text="@string/user_name_text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="60sp"
+                        android:layout_marginTop="8sp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="12sp"
+                        app:cardElevation="0sp">
+
+                        <EditText
+                            android:id="@+id/usernameInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:includeFontPadding="false"
+                            android:inputType="textEmailAddress"
+                            android:padding="5sp"
+                            android:textSize="18sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5sp"
+                        android:fontFamily="@font/nuniot_semi_bold_font"
+                        android:text="@string/username_hint_text"
+                        android:textColor="@color/text_gray"
+                        android:textSize="14sp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25sp"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:text="@string/password_text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="60sp"
+                        android:layout_marginTop="8sp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="12sp"
+                        app:cardElevation="0sp">
+
+                        <EditText
+                            android:id="@+id/passwordInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:includeFontPadding="false"
+                            android:inputType="textPassword"
+                            android:padding="5sp"
+                            android:textSize="18sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5sp"
+                        android:fontFamily="@font/nuniot_semi_bold_font"
+                        android:text="@string/password_hint_text"
+                        android:textColor="@color/text_gray"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25sp"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:text="@string/confirm_password_text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="60sp"
+                        android:layout_marginTop="8sp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="12sp"
+                        app:cardElevation="0sp">
+
+                        <EditText
+                            android:id="@+id/confirmPasswordInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:includeFontPadding="false"
+                            android:inputType="textPassword"
+                            android:padding="5sp"
+                            android:textSize="18sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25sp"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:text="@string/registration_code_text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="60sp"
+                        android:layout_marginTop="8sp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="12sp"
+                        app:cardElevation="0sp">
+
+                        <EditText
+                            android:id="@+id/registrationCodeInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:includeFontPadding="false"
+                            android:padding="5sp"
+                            android:textSize="18sp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/nextButton"
+                android:layout_width="match_parent"
+                android:layout_height="65sp"
+                android:layout_marginStart="25sp"
+                android:layout_marginTop="40sp"
+                android:layout_marginEnd="25sp"
+                android:backgroundTint="@color/appThemePurple"
+                app:cardCornerRadius="12sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/nunito_bold_font"
+                    android:text="@string/next_text"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

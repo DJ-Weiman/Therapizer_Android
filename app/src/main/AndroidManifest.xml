@@ -15,6 +15,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activities.ProfessionalRegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.PatientRegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.UserTypeSelectionActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.WelcomeScreenActivity"
             android:exported="false" />
         <activity
