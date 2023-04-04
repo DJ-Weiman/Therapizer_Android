@@ -9,6 +9,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.therapyizer.R;
+import com.example.therapyizer.activities.patient.PatientMainPageActivity;
+import com.example.therapyizer.activities.patient.PatientProgressActivity;
 import com.example.therapyizer.activities.registration.UserTypeSelectionActivity;
 import com.example.therapyizer.databinding.ActivityWelcomeScreenBinding;
 
@@ -29,7 +31,7 @@ public class WelcomeScreenActivity extends AppCompatActivity {
 
     private void setupButtons(){
         binding.loginButton.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), SignInActivity.class);
+            Intent intent = new Intent(getApplicationContext(), PatientMainPageActivity.class);
             startActivity(intent);
         });
 

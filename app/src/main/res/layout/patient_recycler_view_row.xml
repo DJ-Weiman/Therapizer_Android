@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20sp">
+        
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="14sp"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/appThemePurple">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="5">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:orientation="vertical"
+                    android:padding="20sp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/patientNavTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        android:text="@string/progress_text"
+                        android:layout_marginBottom="8sp"/>
+
+                    <TextView
+                        android:id="@+id/patientNavText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_regular_font"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="@string/progress_text"/>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/patientContinueButton"
+                        android:layout_width="130sp"
+                        android:layout_height="40sp"
+                        android:layout_marginTop="50sp"
+                        app:cardCornerRadius="12sp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:gravity="center">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/overview_text"
+                                android:fontFamily="@font/nunito_regular_font"
+                                android:textColor="@color/black"
+                                android:textSize="18sp"/>
+
+                            <ImageView
+                                android:layout_width="25sp"
+                                android:layout_height="25sp"
+                                android:src="@drawable/continue_icon"/>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="2">
+
+                   <ImageView
+                       android:id="@+id/patientNavImage"
+                       android:layout_width="wrap_content"
+                       android:layout_height="match_parent"
+                       android:src="@drawable/patient_progress_icon"
+                       android:paddingEnd="25sp"
+                       android:layout_gravity="center_vertical"/>
+
+               </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</layout>

@@ -22,7 +22,9 @@
     <color name="user_selection_purple">#cfb0fc</color>
 
     <color name="unselected_gray">#D8D8D8</color>
-
     <color name="text_gray">#838383</color>
+    <color name="flame_orange">#FF9100</color>
+
+    <color name="progress_tracker_green">#8EE475</color>
 
 </resources>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25sp"
+        app:cardCornerRadius="20sp"
+        app:cardBackgroundColor="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20sp" >
+
+            <TextView
+                android:id="@+id/goalTitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sober_streak_text"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_bold_font"
+                android:paddingBottom="20sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                app:cardCornerRadius="8dp"
+                app:strokeColor="@color/black"
+                app:strokeWidth="2sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="20sp"
+                    android:layout_height="20sp"
+                    android:src="@drawable/back_arrow_img"
+                    android:layout_gravity="center"
+                    android:rotationY="180"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/goalEncouragementText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/you_ve_been_sober_for_text"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_bold_font"
+                android:layout_marginTop="20sp"
+                app:layout_constraintTop_toBottomOf="@id/goalTitleText"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/goalProgressCounter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/number_10"
+                android:textSize="16sp"
+                android:textColor="@color/appThemePurple"
+                android:fontFamily="@font/nunito_bold_font"
+                android:layout_marginTop="20sp"
+                android:layout_marginEnd="5sp"
+                app:layout_constraintTop_toBottomOf="@id/goalTitleText"
+                app:layout_constraintEnd_toStartOf="@id/goalProgressDayText"/>
+
+            <TextView
+                android:id="@+id/goalProgressDayText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/days_text"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_bold_font"
+                android:layout_marginTop="20sp"
+                app:layout_constraintTop_toBottomOf="@id/goalTitleText"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/goalProgressTracker"
+                android:layout_width="match_parent"
+                android:layout_height="20sp"
+                android:min="0"
+                android:max="10"
+                android:progress="5"
+                android:layout_marginTop="10sp"
+                app:layout_constraintTop_toBottomOf="@id/goalEncouragementText"
+                app:indicatorColor="@color/progress_tracker_green"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

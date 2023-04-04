@@ -3,16 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/backgroundColor">
+            android:orientation="vertical"
+            android:background="@color/backgroundColor"
+            android:weightSum="9">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50sp"
+                android:layout_height="0sp"
                 android:layout_marginTop="20sp"
-                app:layout_constraintTop_toTopOf="parent"
+                android:layout_weight="1"
                 android:orientation="horizontal">
 
                 <include
@@ -23,13 +25,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
                 android:orientation="vertical"
-                android:layout_marginTop="-100sp"
                 android:paddingStart="25sp"
-                android:paddingEnd="25sp">
+                android:paddingEnd="25sp"
+                android:visibility="visible"
+                android:gravity="center_vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -94,31 +96,37 @@
 
             </LinearLayout>
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/loginButton"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_marginStart="25sp"
-                android:layout_marginEnd="25sp"
-                android:layout_marginBottom="200sp"
-                android:layout_height="65sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:backgroundTint="@color/appThemePurple">
+                android:layout_height="0dp"
+                android:layout_weight="3">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_bold_font"
-                    android:textSize="18sp"
-                    android:layout_gravity="center"
-                    android:text="@string/login_text"
-                    android:textColor="@color/white"
-                    />
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/loginButton"
+                    android:layout_width="match_parent"
+                    android:layout_marginStart="25sp"
+                    android:layout_marginEnd="25sp"
+                    android:layout_height="65sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:backgroundTint="@color/appThemePurple">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:textSize="18sp"
+                        android:layout_gravity="center"
+                        android:text="@string/login_text"
+                        android:textColor="@color/white"
+                        />
 
 
-            </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
 
 </layout>

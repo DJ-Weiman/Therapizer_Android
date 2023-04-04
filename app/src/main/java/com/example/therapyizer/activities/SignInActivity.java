@@ -13,6 +13,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.therapyizer.R;
+import com.example.therapyizer.activities.patient.PatientMainPageActivity;
 import com.example.therapyizer.databinding.ActivitySignInBinding;
 import com.example.therapyizer.utilities.Constants;
 import com.example.therapyizer.utilities.PreferenceManager;
@@ -49,6 +50,11 @@ public class SignInActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in);
 
         binding.topActionBar.backButton.setOnClickListener(view -> onBackPressed());
+
+        binding.loginButton.setOnClickListener(view -> {
+            Intent intent = new Intent(this, PatientMainPageActivity.class);
+            startActivity(intent);
+        });
 
 //        binding.signUpText.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), SignUpActivity.class)));
 //

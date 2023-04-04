@@ -48,4 +48,34 @@
     <string name="profession_text">Profession</string>
     <string name="name_of_hospital_institute_text">Name of Hospital/Institute</string>
     <string name="registration_code_text">Registration code</string>
+    <string name="hello_user_text">Hello Emma</string>
+    <string name="user_encouragement_text">Hope you are doing good today!</string>
+    <string name="progress_text">Progress</string>
+    <string name="overview_text">Overview</string>
+    <string name="knowledge_hub_title">Knowledge Hub</string>
+    <string name="daily_trackers_text">Daily Trackers</string>
+    <string name="sober_streak_text">Sober streak</string>
+    <string name="keep_it_up_user_text">Keep it up Emma!</string>
+    <string name="you_ve_been_sober_for_text">You\'ve been sober for</string>
+    <string name="number_10">10</string>
+    <string name="days_text">Days</string>
+    <string name="reward_text">Reward</string>
+    <string name="your_goals_text">Your Goals</string>
+
+    <string-array name="patient_nav_titles">
+        <item>Progress</item>
+        <item>Knowledge Hub</item>
+        <item>Withdrawal</item>
+        <item>Find Help</item>
+        <item>Therapy</item>
+    </string-array>
+
+    <string-array name="patient_nav_text">
+        <item>Check Progress</item>
+        <item>Read resourceful information</item>
+        <item>Check when withdrawal symptoms are due</item>
+        <item>Look for therapists in your area</item>
+        <item>Connect with medical professionals</item>
+    </string-array>
+
 </resources>

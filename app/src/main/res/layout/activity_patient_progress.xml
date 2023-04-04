@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.patient.PatientProgressActivity"
+        android:background="@color/backgroundColor"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/topActionBarLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="20sp"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/topActionBar"
+                layout="@layout/top_title_bar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/daily_trackers_text"
+                android:textSize="20sp"
+                android:fontFamily="@font/nunito_bold_font"
+                android:textColor="@color/black"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25sp"
+                app:cardCornerRadius="20sp"
+                app:cardBackgroundColor="@color/white">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20sp" >
+
+                    <TextView
+                        android:id="@+id/soberText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sober_streak_text"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/nunito_bold_font"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"/>
+                    
+                    <ImageView
+                        android:layout_width="15sp"
+                        android:layout_height="20sp"
+                        android:src="@drawable/fire_flame_curved_solid"
+                        android:layout_marginStart="8sp"
+                        android:layout_marginTop="4sp"
+                        app:layout_constraintStart_toEndOf="@id/soberText"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/flame_orange" />
+
+                    <TextView
+                        android:id="@+id/progressEncouragementText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/keep_it_up_user_text"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/nunito_regular_font"
+                        app:layout_constraintTop_toBottomOf="@id/soberText"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginTop="6sp"/>
+                    
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="40sp"
+                        android:layout_height="40sp"
+                        app:cardCornerRadius="8dp"
+                        app:strokeColor="@color/black"
+                        app:strokeWidth="2sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+                        
+                        <ImageView
+                            android:layout_width="20sp"
+                            android:layout_height="20sp"
+                            android:src="@drawable/back_arrow_img"
+                            android:layout_gravity="center"
+                            android:rotationY="180"/>
+                        
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/soberProgressText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/you_ve_been_sober_for_text"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:layout_marginTop="20sp"
+                        app:layout_constraintTop_toBottomOf="@id/progressEncouragementText"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/soberProgressCounter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/number_10"
+                        android:textSize="16sp"
+                        android:textColor="@color/appThemePurple"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:layout_marginTop="20sp"
+                        android:layout_marginEnd="5sp"
+                        app:layout_constraintTop_toBottomOf="@id/progressEncouragementText"
+                        app:layout_constraintEnd_toStartOf="@id/soberProgressDayText"/>
+
+                    <TextView
+                        android:id="@+id/soberProgressDayText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/days_text"
+                        android:textSize="16sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:layout_marginTop="20sp"
+                        app:layout_constraintTop_toBottomOf="@id/progressEncouragementText"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                    
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/soberProgressBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="20sp"
+                        android:min="0"
+                        android:max="10"
+                        android:progress="5"
+                        android:layout_marginTop="10sp"
+                        app:layout_constraintTop_toBottomOf="@id/soberProgressText"
+                        app:indicatorColor="@color/progress_tracker_green"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/appThemePurple"
+                        app:layout_constraintTop_toBottomOf="@id/soberProgressBar"
+                        android:layout_marginTop="25sp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginTop="10sp"
+                            android:layout_marginBottom="10sp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/reward_text"
+                                android:fontFamily="@font/nunito_bold_font"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <ImageView
+                                android:layout_width="15sp"
+                                android:layout_height="15sp"
+                                android:src="@drawable/trophy_solid"
+                                app:tint="@color/white"
+                                android:layout_marginStart="10sp"
+                                />
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp"
+            android:orientation="vertical">
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:gravity="center_vertical">
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/your_goals_text"
+                   android:textSize="20sp"
+                   android:fontFamily="@font/nunito_bold_font"
+                   android:textColor="@color/black"/>
+
+               <ImageView
+                   android:layout_width="32sp"
+                   android:layout_height="32sp"
+                   android:src="@drawable/circle_plus_solid"
+                   app:tint="@color/appThemePurple"
+                   android:layout_marginStart="20sp"/>
+
+           </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/patientProgressGoalsRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>
