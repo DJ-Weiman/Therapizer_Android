@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        android:orientation="vertical"
+        tools:context=".activities.patient.WithdrawalActivity">
+
+        <LinearLayout
+            android:id="@+id/topActionBarLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="20sp"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/topActionBar"
+                layout="@layout/top_title_bar" />
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="10sp"
+                    android:paddingStart="25sp"
+                    android:paddingEnd="25sp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:text="@string/withdrawal_text"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="20sp"
+                        android:src="@drawable/img_withdrawal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="10sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/withdrawal_warning_text"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/number_01_"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:textColor="#AC4FFF"
+                        android:textSize="50sp"
+                        android:layout_gravity="center"
+                        android:paddingTop="15sp"
+                        android:paddingBottom="15sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/day_s_text"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="10sp"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Symptoms you may experience"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:layout_marginStart="10sp"
+                        android:layout_marginEnd="10sp"/>
+
+                    <ListView
+                        android:id="@+id/withdrawalSymptomsListView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="150sp"
+                        android:layout_marginTop="10sp"
+                        android:divider="@android:color/transparent"
+                        android:dividerHeight="10sp"
+                        android:footerDividersEnabled="false"
+                        android:headerDividersEnabled="false" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10sp"
+                    android:layout_marginEnd="10sp"
+                    android:paddingTop="10sp"
+                    android:paddingBottom="15sp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="23sp"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:text="@string/need_help_text"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="14sp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15sp"
+                        android:backgroundTint="#FFDEC9">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="5">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:orientation="vertical"
+                                android:padding="20sp"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_bold_font"
+                                    android:textColor="@color/black"
+                                    android:textSize="24sp"
+                                    android:text="@string/withdrawal_help_text"
+                                    android:layout_marginBottom="8sp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_regular_font"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp"
+                                    android:text="@string/contact_medical_professional_text"/>
+
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/findHelpButton"
+                                    android:layout_width="130sp"
+                                    android:layout_height="40sp"
+                                    android:layout_marginTop="30sp"
+                                    app:cardCornerRadius="12sp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal"
+                                        android:gravity="center">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/find_text"
+                                            android:fontFamily="@font/nunito_regular_font"
+                                            android:textColor="@color/black"
+                                            android:textSize="18sp"/>
+
+                                        <ImageView
+                                            android:layout_width="25sp"
+                                            android:layout_height="25sp"
+                                            android:src="@drawable/continue_icon"/>
+
+                                    </LinearLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:id="@+id/patientNavImage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/img_find_help"
+                                    android:paddingEnd="25sp"
+                                    android:layout_gravity="center_vertical"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="14sp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15sp"
+                        android:backgroundTint="#D4D1FE">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="5">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="3"
+                                android:orientation="vertical"
+                                android:padding="20sp"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_bold_font"
+                                    android:textColor="@color/black"
+                                    android:textSize="24sp"
+                                    android:text="@string/panic_button_text"
+                                    android:layout_marginBottom="8sp"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/nunito_regular_font"
+                                    android:textColor="@color/black"
+                                    android:textSize="18sp"
+                                    android:text="@string/panic_button_decription"/>
+
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/panicBtnButton"
+                                    android:layout_width="130sp"
+                                    android:layout_height="40sp"
+                                    android:layout_marginTop="50sp"
+                                    app:cardCornerRadius="12sp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="horizontal"
+                                        android:gravity="center">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="@string/find_text"
+                                            android:fontFamily="@font/nunito_regular_font"
+                                            android:textColor="@color/black"
+                                            android:textSize="18sp"/>
+
+                                        <ImageView
+                                            android:layout_width="25sp"
+                                            android:layout_height="25sp"
+                                            android:src="@drawable/continue_icon"/>
+
+                                    </LinearLayout>
+
+                                </com.google.android.material.card.MaterialCardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="2">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/img_panic_btn"
+                                    android:paddingEnd="25sp"
+                                    android:layout_gravity="center_vertical"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

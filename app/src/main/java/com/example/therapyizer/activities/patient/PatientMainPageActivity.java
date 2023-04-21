@@ -57,12 +57,18 @@ public class PatientMainPageActivity extends AppCompatActivity implements Patien
 
         Intent progressIntent = new Intent(getApplicationContext(), PatientProgressActivity.class);
         Intent knowledgeHubIntent = new Intent(getApplicationContext(), KnowledgeHubActivity.class);
+        Intent withdrawalIntent = new Intent(getApplicationContext(), WithdrawalActivity.class);
 
         switch (position){
             case 0:
                 startActivity(progressIntent);
+                break;
             case 1:
                 startActivity(knowledgeHubIntent);
+                break;
+            case 2:
+                startActivity(withdrawalIntent);
+                break;
         }
 
     }

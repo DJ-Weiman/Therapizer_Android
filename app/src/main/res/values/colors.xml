@@ -17,6 +17,7 @@
     <color name="colorMeetingInvitationEnd">#8A1AAA</color>
 
     <color name="appThemePurple">#BE83F3</color>
+    <color name="darkerPurple">#AC4FFF</color>
 
     <color name="user_selection_green">#c5f8b6</color>
     <color name="user_selection_purple">#cfb0fc</color>

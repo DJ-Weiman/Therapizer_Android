@@ -65,6 +65,16 @@
     <string name="articles_text">Articles</string>
     <string name="journals_text">Journals</string>
     <string name="explore_text">Explore</string>
+    <string name="withdrawal_text">Withdrawal</string>
+    <string name="withdrawal_warning_text">You may experience withdrawal in</string>
+    <string name="day_s_text">Day(s)</string>
+    <string name="number_01_">01</string>
+    <string name="need_help_text">Need Help?</string>
+    <string name="withdrawal_help_text">Your Nearest Therapy option</string>
+    <string name="contact_medical_professional_text">Contact your nearest medical professional</string>
+    <string name="find_text">Find</string>
+    <string name="panic_button_text">Panic Button</string>
+    <string name="panic_button_decription">Click in case of emergency</string>
 
     <string-array name="patient_nav_titles">
         <item>Progress</item>

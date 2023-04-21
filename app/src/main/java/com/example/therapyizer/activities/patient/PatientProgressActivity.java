@@ -30,6 +30,9 @@ public class PatientProgressActivity extends AppCompatActivity {
         PatientProgressAdapter adapter = new PatientProgressAdapter(this, patientProgressGoalModels);
         binding.patientProgressGoalsRV.setAdapter(adapter);
         binding.patientProgressGoalsRV.setLayoutManager(new LinearLayoutManager(this));
+        binding.topActionBar.backButton.setOnClickListener(view -> {
+            onBackPressed();
+        });
     }
 
     private void setPatientProgressGoalModels(){
