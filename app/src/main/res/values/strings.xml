@@ -77,6 +77,8 @@
     <string name="panic_button_decription">Click in case of emergency</string>
     <string name="your_nearest_therapist_text">Your Nearest Therapist</string>
     <string name="search_text">Search</string>
+    <string name="therapy_text">Therapy</string>
+    <string name="therapy_search_text">Search for preferred Medical Professional</string>
 
     <string-array name="patient_nav_titles">
         <item>Progress</item>

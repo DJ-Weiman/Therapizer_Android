@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor"
+        android:orientation="vertical"
+        tools:context=".activities.patient.TherapyActivity">
+
+        <LinearLayout
+            android:id="@+id/topActionBarLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="20sp"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/topActionBar"
+                layout="@layout/top_title_bar" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="15sp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:text="@string/therapy_text"
+                android:textColor="@color/black"/>
+
+            <ImageView
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:src="@drawable/therapy_icon"
+                android:layout_marginStart="10sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="15sp"
+            android:paddingTop="50sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/therapy_search_text"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:paddingBottom="15sp"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="70sp"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</layout>
