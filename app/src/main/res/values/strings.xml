@@ -75,6 +75,8 @@
     <string name="find_text">Find</string>
     <string name="panic_button_text">Panic Button</string>
     <string name="panic_button_decription">Click in case of emergency</string>
+    <string name="your_nearest_therapist_text">Your Nearest Therapist</string>
+    <string name="search_text">Search</string>
 
     <string-array name="patient_nav_titles">
         <item>Progress</item>

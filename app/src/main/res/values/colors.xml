@@ -28,4 +28,6 @@
 
     <color name="progress_tracker_green">#8EE475</color>
 
+    <color name="search_button_grey">#D8D8D8</color>
+
 </resources>
