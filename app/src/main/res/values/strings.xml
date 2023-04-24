@@ -82,6 +82,7 @@
     <string name="clients_text">Clients</string>
     <string name="notes_text">Notes</string>
     <string name="appointments_text">Appointments</string>
+    <string name="screening_text">Screening</string>
 
     <string-array name="patient_nav_titles">
         <item>Progress</item>
@@ -159,6 +160,15 @@
         <item>12/03/2022</item>
         <item>10/11/2023</item>
         <item>04/06/2022</item>
+    </string-array>
+
+    <string-array name="screening_questions">
+        <item>Do you have strong urges or powerful cravings to use drugs?</item>
+        <item>Have you for a while now wanted to cut back on drugs or made unsuccessful attempts to do so?</item>
+        <item>Have you experienced social or relationship problems due to your use of drugs and kept using anyway?</item>
+        <item>Do you spend a great deal of time finding, using, or recovering from drugs?</item>
+        <item>When you attempt to cut back on or stop your use of drugs, have you experienced uncomfortable physical or mental health symptoms (withdrawal)?</item>
+        <item>Do you often use drugs in larger amounts or over a longer period of time than you intended?</item>
     </string-array>
 
 </resources>

@@ -7,6 +7,16 @@ public class Constants {
     public static final String KEY_LAST_NAME = "last_name";
     public static final String KEY_EMAIL = "email";
     public static final String KEY_PASSWORD = "password";
+    public static final String KEY_USERNAME = "user_name";
+    public static final String KEY_USER_TYPE = "user_type";
+
+    public static final String KEY_PROFESSION = "profession";
+    public static final String KEY_HOSPITAL = "hospital";
+    public static final String KEY_REG_CODE = "registration_code";
+
+    public static final String PATIENT_USER_TYPE = "Patient";
+    public static final String PROFESSIONAL_USER_TYPE = "Professional";
+
     public static final String KEY_USER_ID = "user_id";
     public static final String KEY_FCM_TOKEN = "fcm_token";
 

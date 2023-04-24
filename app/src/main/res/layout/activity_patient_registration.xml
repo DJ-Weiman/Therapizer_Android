@@ -308,28 +308,42 @@
 
             </LinearLayout>
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/nextButton"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="65sp"
-                android:layout_marginTop="40sp"
-                android:backgroundTint="@color/appThemePurple"
-                app:cardCornerRadius="12sp"
-                android:layout_marginStart="25sp"
-                android:layout_marginEnd="25sp">
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/nunito_bold_font"
-                    android:textSize="18sp"
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/nextButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="65sp"
+                    android:layout_marginTop="40sp"
+                    android:backgroundTint="@color/appThemePurple"
+                    app:cardCornerRadius="12sp"
+                    android:layout_marginStart="25sp"
+                    android:layout_marginEnd="25sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:textSize="18sp"
+                        android:layout_gravity="center"
+                        android:text="@string/next_text"
+                        android:textColor="@color/white"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <ProgressBar
+                    android:id="@+id/signUpProgressBar"
+                    android:visibility="invisible"
+                    android:layout_width="45sp"
+                    android:layout_height="45sp"
                     android:layout_gravity="center"
-                    android:text="@string/next_text"
-                    android:textColor="@color/white"
-                    />
+                    android:layout_marginTop="20sp"/>
 
 
-            </com.google.android.material.card.MaterialCardView>
+            </FrameLayout>
 
 
         </LinearLayout>
