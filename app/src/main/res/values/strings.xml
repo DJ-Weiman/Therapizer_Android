@@ -79,6 +79,9 @@
     <string name="search_text">Search</string>
     <string name="therapy_text">Therapy</string>
     <string name="therapy_search_text">Search for preferred Medical Professional</string>
+    <string name="clients_text">Clients</string>
+    <string name="notes_text">Notes</string>
+    <string name="appointments_text">Appointments</string>
 
     <string-array name="patient_nav_titles">
         <item>Progress</item>
@@ -124,6 +127,38 @@
         <item>Description 01</item>
         <item>Description 02</item>
         <item>Description 03</item>
+    </string-array>
+
+    <string-array name="professional_nav_card_titles">
+        <item>Clients</item>
+        <item>Notes</item>
+        <item>Knowledge Hub</item>
+        <item>Appointments</item>
+    </string-array>
+
+    <string-array name="professional_nav_card_descriptions">
+        <item>Store your customer files</item>
+        <item>Take Notes during sessions</item>
+        <item>Access Reference Material</item>
+        <item>Connect with clients</item>
+    </string-array>
+
+    <string-array name="client_names">
+        <item>Anne Watson</item>
+        <item>Yvonne Watson</item>
+        <item>David Aaron</item>
+    </string-array>
+
+    <string-array name="client_ages">
+        <item>22</item>
+        <item>20</item>
+        <item>24</item>
+    </string-array>
+
+    <string-array name="notes_dates">
+        <item>12/03/2022</item>
+        <item>10/11/2023</item>
+        <item>04/06/2022</item>
     </string-array>
 
 </resources>

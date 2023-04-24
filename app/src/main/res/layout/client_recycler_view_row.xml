@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25sp"
+        app:cardCornerRadius="20sp"
+        app:cardBackgroundColor="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20sp" >
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/clientImageView"
+                android:layout_width="70sp"
+                android:layout_height="70sp"
+                android:backgroundTint="@color/appThemePurple"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="8sp"
+                    android:src="@drawable/img_professional_client"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/clientName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anne Watson"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_bold_font"
+                android:paddingBottom="10sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/clientImageView"
+                android:layout_marginStart="15sp"/>
+
+            <TextView
+                android:id="@+id/clientAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="22 years old"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito_bold_font"
+                android:paddingBottom="10sp"
+                app:layout_constraintStart_toEndOf="@id/clientImageView"
+                app:layout_constraintTop_toBottomOf="@id/clientName"
+                android:layout_marginStart="15sp"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

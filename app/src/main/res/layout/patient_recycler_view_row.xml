@@ -8,11 +8,11 @@
         android:paddingBottom="20sp">
         
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/patientNavItemCardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="14sp"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/appThemePurple">
+            android:layout_gravity="center">
 
             <LinearLayout
                 android:layout_width="match_parent"

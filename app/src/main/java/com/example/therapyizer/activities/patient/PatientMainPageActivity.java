@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.example.therapyizer.R;
 import com.example.therapyizer.adapters.PatientNavAdapter;
@@ -20,11 +19,20 @@ public class PatientMainPageActivity extends AppCompatActivity implements Patien
 
     ActivityPatientMainPageBinding binding;
     ArrayList<PatientNavCardModel> patientNavCardModels = new ArrayList<>();
-    int[] patientNavImages = {R.drawable.patient_progress_icon,
+    int[] patientNavImages = {
+            R.drawable.patient_progress_icon,
             R.drawable.knowledge_hub_icon,
             R.drawable.withdrawal_icon,
             R.drawable.find_help_icon,
             R.drawable.therapy_icon};
+
+    int[] patientNavCardColors = {
+            R.color.patient_progress_purple,
+            R.color.patient_knowledgehub_blue,
+            R.color.patient_withdrawal_green,
+            R.color.patient_find_help_purple,
+            R.color.patient_therapy_orange,
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +56,7 @@ public class PatientMainPageActivity extends AppCompatActivity implements Patien
         String[] navTexts = getResources().getStringArray(R.array.patient_nav_text);
 
         for (int i = 0; i < navTitles.length; i++) {
-            patientNavCardModels.add(new PatientNavCardModel(navTitles[i], navTexts[i], patientNavImages[i]));
+            patientNavCardModels.add(new PatientNavCardModel(navTitles[i], navTexts[i], patientNavImages[i], patientNavCardColors[i]));
         }
     }
 

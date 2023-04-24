@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.therapyizer.R;
@@ -43,6 +44,8 @@ public class PatientNavAdapter extends RecyclerView.Adapter<PatientNavAdapter.My
         holder.navTitle.setText(patientNavCardModels.get(position).getNavTitle());
         holder.navText.setText(patientNavCardModels.get(position).getNavText());
         holder.imageView.setImageResource(patientNavCardModels.get(position).getImage());
+
+        holder.navCardView.setBackgroundColor(ContextCompat.getColor(holder.itemView.getContext(), patientNavCardModels.get(position).getColor()));
     }
 
     @Override
@@ -54,6 +57,7 @@ public class PatientNavAdapter extends RecyclerView.Adapter<PatientNavAdapter.My
         ImageView imageView;
         TextView navTitle, navText;
         CardView continueButton;
+        CardView navCardView;
 
         public MyViewHolder(@NonNull View itemView, PatientNavInterface patientNavInterface) {
             super(itemView);
@@ -61,6 +65,7 @@ public class PatientNavAdapter extends RecyclerView.Adapter<PatientNavAdapter.My
             imageView = itemView.findViewById(R.id.patientNavImage);
             navTitle = itemView.findViewById(R.id.patientNavTitle);
             navText = itemView.findViewById(R.id.patientNavText);
+            navCardView = itemView.findViewById(R.id.patientNavItemCardView);
 
             continueButton = itemView.findViewById(R.id.patientContinueButton);
             continueButton.setOnClickListener(view -> {

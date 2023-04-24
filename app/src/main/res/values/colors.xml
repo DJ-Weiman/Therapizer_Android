@@ -27,7 +27,12 @@
     <color name="flame_orange">#FF9100</color>
 
     <color name="progress_tracker_green">#8EE475</color>
-
     <color name="search_button_grey">#D8D8D8</color>
+    
+    <color name="patient_progress_purple">#c5a0f9</color>
+    <color name="patient_knowledgehub_blue">#b9e5ff</color>
+    <color name="patient_withdrawal_green">#c5f8b6</color>
+    <color name="patient_find_help_purple">#d4d1fe</color>
+    <color name="patient_therapy_orange">#ffdec9</color>
 
 </resources>
