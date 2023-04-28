@@ -171,4 +171,32 @@
         <item>Do you often use drugs in larger amounts or over a longer period of time than you intended?</item>
     </string-array>
 
+    <string-array name="patient_age_values">
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+    </string-array>
+
+    <string-array name="patient_drugs">
+        <item>Cannabis</item>
+        <item>Heroin</item>
+        <item>Meth</item>
+    </string-array>
+
+    <string-array name="patient_Dosage">
+        <item>every day </item>
+        <item>Ocassionally</item>
+        <item>rarely </item>
+    </string-array>
+
 </resources>

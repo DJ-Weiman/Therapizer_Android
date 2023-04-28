@@ -43,7 +43,7 @@
                 android:layout_height="6sp"
                 android:orientation="horizontal"
                 android:layout_marginTop="50sp"
-                android:weightSum="2">
+                android:weightSum="3">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/generalInformationMarker"
@@ -55,6 +55,14 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/credentialsMarker"
+                    android:layout_width="0sp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="5sp"
+                    app:cardCornerRadius="8sp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/personalInformationMarker"
                     android:layout_width="0sp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -303,6 +311,99 @@
                         android:textSize="18sp"
                         android:padding="5sp"
                         android:background="@null"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/personalInformationLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="45sp"
+                android:layout_marginStart="25sp"
+                android:layout_marginEnd="25sp"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Personal Information"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito_bold_font"
+                    android:textSize="23sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age"
+                    android:fontFamily="@font/nunito_bold_font"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="50sp"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="60sp"
+                    android:layout_marginTop="8sp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="12sp"
+                    app:cardElevation="0sp">
+
+                    <Spinner
+                        android:id="@+id/ageSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"  />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Drug"
+                    android:fontFamily="@font/nunito_bold_font"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="25sp"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="60sp"
+                    android:layout_marginTop="8sp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="12sp"
+                    app:cardElevation="0sp">
+
+                    <Spinner
+                        android:id="@+id/drugSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dosage"
+                    android:fontFamily="@font/nunito_bold_font"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:layout_marginTop="25sp"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="60sp"
+                    android:layout_marginTop="8sp"
+                    android:backgroundTint="@color/white"
+                    app:cardCornerRadius="12sp"
+                    app:cardElevation="0sp">
+
+                    <Spinner
+                        android:id="@+id/dosageSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
 
                 </com.google.android.material.card.MaterialCardView>
 

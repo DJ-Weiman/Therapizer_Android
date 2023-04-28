@@ -35,4 +35,6 @@
     <color name="patient_find_help_purple">#d4d1fe</color>
     <color name="patient_therapy_orange">#ffdec9</color>
 
+    <color name="red">#FF0000</color>
+
 </resources>

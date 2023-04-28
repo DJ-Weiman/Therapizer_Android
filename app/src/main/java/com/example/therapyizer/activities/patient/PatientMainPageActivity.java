@@ -6,18 +6,32 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.example.therapyizer.R;
+import com.example.therapyizer.activities.MainActivity;
+import com.example.therapyizer.activities.SignInActivity;
+import com.example.therapyizer.activities.professional.ProfessionalMainPageActivity;
 import com.example.therapyizer.adapters.PatientNavAdapter;
 import com.example.therapyizer.databinding.ActivityPatientMainPageBinding;
 import com.example.therapyizer.interfaces.PatientNavInterface;
 import com.example.therapyizer.models.PatientNavCardModel;
+import com.example.therapyizer.utilities.Constants;
+import com.example.therapyizer.utilities.PreferenceManager;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class PatientMainPageActivity extends AppCompatActivity implements PatientNavInterface {
 
     ActivityPatientMainPageBinding binding;
+    private PreferenceManager preferenceManager;
     ArrayList<PatientNavCardModel> patientNavCardModels = new ArrayList<>();
     int[] patientNavImages = {
             R.drawable.patient_progress_icon,
@@ -39,6 +53,7 @@ public class PatientMainPageActivity extends AppCompatActivity implements Patien
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_patient_main_page);
+        preferenceManager = new PreferenceManager(getApplicationContext());
 
         setUpPatientNavCardModels();
 
@@ -49,6 +64,47 @@ public class PatientMainPageActivity extends AppCompatActivity implements Patien
         binding.topActionBar.backButton.setOnClickListener(view -> {
             onBackPressed();
         });
+        binding.signOutButton.setOnClickListener(view -> signOut());
+        binding.userWelcomeText.setText("Hello " + preferenceManager.getString(Constants.KEY_FIRST_NAME));
+
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(task -> {
+            if (task.isSuccessful() && task.getResult() != null) {
+                sendFCMTokenToDatabase(task.getResult());
+            }
+        });
+    }
+
+    private void sendFCMTokenToDatabase(String token) {
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+        DocumentReference documentReference =
+                database.collection(Constants.KEY_COLLECTION_USERS).document(
+                        preferenceManager.getString(Constants.KEY_USER_ID)
+                );
+        documentReference.update(Constants.KEY_FCM_TOKEN, token)
+                .addOnFailureListener(e -> {
+                    Toast.makeText(PatientMainPageActivity.this, "Unable to send Token: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                });
+
+    }
+
+    private void signOut() {
+        Toast.makeText(this, "Signing out...", Toast.LENGTH_SHORT).show();
+        FirebaseFirestore database = FirebaseFirestore.getInstance();
+
+        DocumentReference documentReference =
+                database.collection(Constants.KEY_COLLECTION_USERS).document(
+                        preferenceManager.getString(Constants.KEY_USER_ID)
+                );
+
+        HashMap<String, Object> updates = new HashMap<>();
+        updates.put(Constants.KEY_FCM_TOKEN, FieldValue.delete());
+        documentReference.update(updates)
+                .addOnSuccessListener(unused -> {
+                    preferenceManager.clearPreferences();
+                    startActivity(new Intent(getApplicationContext(), SignInActivity.class));
+                    finish();
+                })
+                .addOnFailureListener(e -> Toast.makeText(PatientMainPageActivity.this, "There was an issue Signing out", Toast.LENGTH_SHORT).show());
     }
 
     private void setUpPatientNavCardModels() {
@@ -67,6 +123,7 @@ public class PatientMainPageActivity extends AppCompatActivity implements Patien
         Intent knowledgeHubIntent = new Intent(getApplicationContext(), KnowledgeHubActivity.class);
         Intent withdrawalIntent = new Intent(getApplicationContext(), WithdrawalActivity.class);
         Intent findHelpIntent = new Intent(getApplicationContext(), FindHelpActivity.class);
+        Intent therapyIntent = new Intent(getApplicationContext(), TherapyActivity.class);
 
         switch (position){
             case 0:
@@ -80,6 +137,9 @@ public class PatientMainPageActivity extends AppCompatActivity implements Patien
                 break;
             case 3:
                 startActivity(findHelpIntent);
+                break;
+            case 4:
+                startActivity(therapyIntent);
                 break;
             default:
                 startActivity(progressIntent);

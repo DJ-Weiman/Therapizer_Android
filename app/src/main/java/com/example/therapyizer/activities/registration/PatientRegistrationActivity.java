@@ -7,14 +7,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.example.therapyizer.R;
+import com.example.therapyizer.activities.MainActivity;
 import com.example.therapyizer.activities.patient.PatientMainPageActivity;
 import com.example.therapyizer.databinding.ActivityPatientRegistrationBinding;
 import com.example.therapyizer.utilities.Constants;
 import com.example.therapyizer.utilities.CurrentScreen;
 import com.example.therapyizer.utilities.PreferenceManager;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -36,8 +39,10 @@ public class PatientRegistrationActivity extends AppCompatActivity {
 
         binding.generalInformationMarker.setBackgroundColor(getColor(R.color.appThemePurple));
         binding.credentialsMarker.setBackgroundColor(getColor(R.color.unselected_gray));
+        binding.personalInformationMarker.setBackgroundColor(getColor(R.color.unselected_gray));
 
         setupButtons();
+        setUpSpinners();
     }
 
     private void setupButtons() {
@@ -48,10 +53,22 @@ public class PatientRegistrationActivity extends AppCompatActivity {
             else if (currentScreen.equals(CurrentScreen.CREDENTIALS)) {
                 currentScreen = CurrentScreen.GENERAL_INFORMATION;
                 binding.credentialsMarker.setBackgroundColor(getColor(R.color.unselected_gray));
+                binding.personalInformationMarker.setBackgroundColor(getColor(R.color.unselected_gray));
                 binding.generalInformationMarker.setBackgroundColor(getColor(R.color.appThemePurple));
+
+                binding.credentialsLinearLayout.setVisibility(View.GONE);
+                binding.personalInformationLinearLayout.setVisibility(View.GONE);
+                binding.generalInformationLinearLayout.setVisibility(View.VISIBLE);
+
+            } else if (currentScreen.equals(CurrentScreen.PERSONAL_INFORMATION)) {
+                currentScreen = CurrentScreen.CREDENTIALS;
+                binding.credentialsMarker.setBackgroundColor(getColor(R.color.appThemePurple));
+                binding.generalInformationMarker.setBackgroundColor(getColor(R.color.unselected_gray));
+                binding.personalInformationMarker.setBackgroundColor(getColor(R.color.unselected_gray));
                 if (binding.generalInformationLinearLayout.getVisibility() == View.GONE) {
-                    binding.credentialsLinearLayout.setVisibility(View.GONE);
-                    binding.generalInformationLinearLayout.setVisibility(View.VISIBLE);
+                    binding.credentialsLinearLayout.setVisibility(View.VISIBLE);
+                    binding.generalInformationLinearLayout.setVisibility(View.GONE);
+                    binding.personalInformationLinearLayout.setVisibility(View.GONE);
                 }
             }
         });
@@ -63,18 +80,43 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                     currentScreen = CurrentScreen.CREDENTIALS;
 
                     binding.generalInformationMarker.setBackgroundColor(getColor(R.color.unselected_gray));
+                    binding.personalInformationMarker.setBackgroundColor(getColor(R.color.unselected_gray));
                     binding.credentialsMarker.setBackgroundColor(getColor(R.color.appThemePurple));
 
-                    if (binding.credentialsLinearLayout.getVisibility() == View.GONE) {
-                        binding.generalInformationLinearLayout.setVisibility(View.GONE);
-                        binding.credentialsLinearLayout.setVisibility(View.VISIBLE);
-                    }
+                    binding.generalInformationLinearLayout.setVisibility(View.GONE);
+                    binding.credentialsLinearLayout.setVisibility(View.VISIBLE);
+                    binding.personalInformationLinearLayout.setVisibility(View.GONE);
                 } else if (currentScreen.equals(CurrentScreen.CREDENTIALS)) {
+                    currentScreen = CurrentScreen.PERSONAL_INFORMATION;
+
+                    binding.generalInformationMarker.setBackgroundColor(getColor(R.color.unselected_gray));
+                    binding.personalInformationMarker.setBackgroundColor(getColor(R.color.appThemePurple));
+                    binding.credentialsMarker.setBackgroundColor(getColor(R.color.unselected_gray));
+
+                    binding.generalInformationLinearLayout.setVisibility(View.GONE);
+                    binding.credentialsLinearLayout.setVisibility(View.GONE);
+                    binding.personalInformationLinearLayout.setVisibility(View.VISIBLE);
+
+                } else if (currentScreen.equals(CurrentScreen.PERSONAL_INFORMATION)) {
                     verifyInputs();
                 }
 
             }
         });
+    }
+
+    private void setUpSpinners() {
+        ArrayAdapter<CharSequence> ageAdapter = ArrayAdapter.createFromResource(this, R.array.patient_age_values, android.R.layout.simple_spinner_item);
+        ageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        binding.ageSpinner.setAdapter(ageAdapter);
+
+        ArrayAdapter<CharSequence> drugsAdapter = ArrayAdapter.createFromResource(this, R.array.patient_drugs, android.R.layout.simple_spinner_item);
+        drugsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        binding.drugSpinner.setAdapter(drugsAdapter);
+
+        ArrayAdapter<CharSequence> dosageAdapter = ArrayAdapter.createFromResource(this, R.array.patient_Dosage, android.R.layout.simple_spinner_item);
+        dosageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        binding.dosageSpinner.setAdapter(dosageAdapter);
     }
 
     private void verifyInputs() {
@@ -119,6 +161,7 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                 .addOnSuccessListener(documentReference -> {
 
                     preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
+                    preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
                     preferenceManager.putString(Constants.KEY_FIRST_NAME, binding.firstNameInput.getText().toString());
                     preferenceManager.putString(Constants.KEY_LAST_NAME, binding.lastNameInput.getText().toString());
                     preferenceManager.putString(Constants.KEY_EMAIL, binding.emailInput.getText().toString());

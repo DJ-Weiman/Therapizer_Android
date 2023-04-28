@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/backgroundColor"
+        tools:context=".activities.registration.PatientScreeningResultActivity">
+
+        <LinearLayout
+            android:id="@+id/topActionBarLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginTop="20sp"
+            android:orientation="horizontal">
+
+            <include
+                android:id="@+id/topActionBar"
+                layout="@layout/top_title_bar"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold_font"
+                android:textSize="23sp"
+                android:text="Screening Resulted in"
+                android:textColor="@color/black"/>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:layout_width="match_parent"
+                android:paddingStart="30sp"
+                android:paddingEnd="30sp"
+                android:layout_height="40sp"
+                android:layout_marginTop="60sp"/>
+
+            <TextView
+                android:id="@+id/screeningNumericalResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold_font"
+                android:textSize="23sp"
+                android:text="3 out of 6"
+                android:layout_marginTop="30sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/screeningResultText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular_font"
+                android:textSize="23sp"
+                android:text="Moderately Addicted"
+                android:layout_marginTop="30sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_regular_font"
+                android:textSize="23sp"
+                android:text="Lets get you sober and active again"
+                android:layout_marginTop="30sp"
+                android:textColor="@color/black"/>
+
+
+            <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/nextButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="65sp"
+                    android:layout_marginTop="40sp"
+                    android:backgroundTint="@color/appThemePurple"
+                    app:cardCornerRadius="12sp"
+                    android:layout_marginStart="25sp"
+                    android:layout_marginEnd="25sp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold_font"
+                        android:textSize="18sp"
+                        android:layout_gravity="center"
+                        android:text="@string/next_text"
+                        android:textColor="@color/white"
+                        />
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

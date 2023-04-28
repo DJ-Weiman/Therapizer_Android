@@ -49,13 +49,8 @@ public class SignInActivity extends AppCompatActivity {
         binding.topActionBar.backButton.setOnClickListener(view -> onBackPressed());
 
         binding.loginButton.setOnClickListener(view -> {
-            Intent intent = new Intent(this, PatientMainPageActivity.class);
-            startActivity(intent);
+            signInButtonPressed();
         });
-
-//        binding.signUpText.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), SignUpActivity.class)));
-//
-        binding.loginButton.setOnClickListener(view -> signInButtonPressed());
     }
 
 

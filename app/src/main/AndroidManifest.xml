@@ -15,8 +15,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activities.registration.PatientScreeningResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.registration.PatientScreeeningActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".activities.professional.ProfessionalAppointmentsActivity"
             android:exported="false" />
@@ -28,7 +31,7 @@
             android:exported="false" />
         <activity
             android:name=".activities.professional.ProfessionalMainPageActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".activities.patient.TherapyActivity"
             android:exported="false" />
@@ -69,7 +72,7 @@
             android:name=".activities.SplashScreenActivity"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activities.OutgoingInvitationActivity"
             android:screenOrientation="portrait" />

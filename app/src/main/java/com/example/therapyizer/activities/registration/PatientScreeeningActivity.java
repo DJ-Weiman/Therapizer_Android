@@ -33,8 +33,8 @@ public class PatientScreeeningActivity extends AppCompatActivity {
         binding.topActionBar.backButton.setVisibility(View.GONE);
 
         binding.nextButton.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), PatientMainPageActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            Intent intent = new Intent(getApplicationContext(), PatientScreeningResultActivity.class);
+//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         });
 
@@ -53,4 +53,5 @@ public class PatientScreeeningActivity extends AppCompatActivity {
             questionsModels.add(new QuestionsModel(questionsText[i]));
         }
     }
+
 }
