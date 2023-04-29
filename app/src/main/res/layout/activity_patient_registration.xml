@@ -344,6 +344,13 @@
                     android:textColor="@color/black"
                     android:layout_marginTop="50sp"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enter values between 18 and 30"
+                    android:layout_marginTop="5sp"
+                    android:layout_marginBottom="5sp"/>
+
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="60sp"
@@ -352,10 +359,18 @@
                     app:cardCornerRadius="12sp"
                     app:cardElevation="0sp">
 
-                    <Spinner
-                        android:id="@+id/ageSpinner"
+                    <EditText
+                        android:id="@+id/ageInput"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"  />
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:includeFontPadding="false"
+                        android:inputType="number"
+                        android:textSize="18sp"
+                        android:padding="5sp"
+                        android:background="@null"/>
+
 
                 </com.google.android.material.card.MaterialCardView>
 
@@ -368,6 +383,13 @@
                     android:textColor="@color/black"
                     android:layout_marginTop="25sp"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Cannabis, Heroin or Meth"
+                    android:layout_marginTop="5sp"
+                    android:layout_marginBottom="5sp"/>
+
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="60sp"
@@ -376,10 +398,16 @@
                     app:cardCornerRadius="12sp"
                     app:cardElevation="0sp">
 
-                    <Spinner
-                        android:id="@+id/drugSpinner"
+                    <EditText
+                        android:id="@+id/drugInput"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:includeFontPadding="false"
+                        android:textSize="18sp"
+                        android:padding="5sp"
+                        android:background="@null"/>
 
                 </com.google.android.material.card.MaterialCardView>
 
@@ -392,6 +420,14 @@
                     android:textColor="@color/black"
                     android:layout_marginTop="25sp"/>
 
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Enter Every day, Occasionally or Rarely"
+                    android:layout_marginTop="5sp"
+                    android:layout_marginBottom="5sp"/>
+
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="60sp"
@@ -400,10 +436,16 @@
                     app:cardCornerRadius="12sp"
                     app:cardElevation="0sp">
 
-                    <Spinner
-                        android:id="@+id/dosageSpinner"
+                    <EditText
+                        android:id="@+id/dosageInput"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no"
+                        android:includeFontPadding="false"
+                        android:textSize="18sp"
+                        android:padding="5sp"
+                        android:background="@null"/>
 
                 </com.google.android.material.card.MaterialCardView>
 

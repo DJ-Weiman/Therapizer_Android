@@ -5,8 +5,11 @@ import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
@@ -22,11 +25,14 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 
-public class PatientRegistrationActivity extends AppCompatActivity {
+public class PatientRegistrationActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     ActivityPatientRegistrationBinding binding;
     private static CurrentScreen currentScreen;
     private PreferenceManager preferenceManager;
+    private String[] ages;
+    private String[] drugs;
+    private String[] dosages;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +48,6 @@ public class PatientRegistrationActivity extends AppCompatActivity {
         binding.personalInformationMarker.setBackgroundColor(getColor(R.color.unselected_gray));
 
         setupButtons();
-        setUpSpinners();
     }
 
     private void setupButtons() {
@@ -105,21 +110,13 @@ public class PatientRegistrationActivity extends AppCompatActivity {
         });
     }
 
-    private void setUpSpinners() {
-        ArrayAdapter<CharSequence> ageAdapter = ArrayAdapter.createFromResource(this, R.array.patient_age_values, android.R.layout.simple_spinner_item);
-        ageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        binding.ageSpinner.setAdapter(ageAdapter);
-
-        ArrayAdapter<CharSequence> drugsAdapter = ArrayAdapter.createFromResource(this, R.array.patient_drugs, android.R.layout.simple_spinner_item);
-        drugsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        binding.drugSpinner.setAdapter(drugsAdapter);
-
-        ArrayAdapter<CharSequence> dosageAdapter = ArrayAdapter.createFromResource(this, R.array.patient_Dosage, android.R.layout.simple_spinner_item);
-        dosageAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        binding.dosageSpinner.setAdapter(dosageAdapter);
-    }
-
     private void verifyInputs() {
+
+        int age = 0;
+        if(!binding.ageInput.getText().toString().isEmpty()) {
+            age = Integer.parseInt(binding.ageInput.getText().toString());
+        }
+
         if (binding.firstNameInput.getText().toString().trim().isEmpty())
             Toast.makeText(PatientRegistrationActivity.this, "Please Enter your First Name", Toast.LENGTH_SHORT).show();
         else if (binding.lastNameInput.getText().toString().trim().isEmpty())
@@ -136,9 +133,45 @@ public class PatientRegistrationActivity extends AppCompatActivity {
             Toast.makeText(PatientRegistrationActivity.this, "Please Enter confirm your password", Toast.LENGTH_SHORT).show();
         else if (!binding.passwordInput.getText().toString().equals(binding.confirmPasswordInput.getText().toString()))
             Toast.makeText(PatientRegistrationActivity.this, "Password and confirm password do not match", Toast.LENGTH_SHORT).show();
+        else if(binding.ageInput.getText().toString().isEmpty())
+            Toast.makeText(PatientRegistrationActivity.this, "Please Enter an age value", Toast.LENGTH_SHORT).show();
+        else if(binding.drugInput.getText().toString().isEmpty())
+            Toast.makeText(PatientRegistrationActivity.this, "Please Enter an Drug", Toast.LENGTH_SHORT).show();
+        else if(binding.dosageInput.getText().toString().isEmpty())
+            Toast.makeText(PatientRegistrationActivity.this, "Please Enter an Dosage", Toast.LENGTH_SHORT).show();
+        else if(age < 18 || age > 30)
+            Toast.makeText(PatientRegistrationActivity.this, "Enter a correct age value", Toast.LENGTH_SHORT).show();
+        else if(checkDrugInput())
+            Toast.makeText(PatientRegistrationActivity.this, "Enter a Valid drug type", Toast.LENGTH_SHORT).show();
+        else if(checkDosageInput())
+            Toast.makeText(PatientRegistrationActivity.this, "Enter a valid Dosage", Toast.LENGTH_SHORT).show();
         else {
             registerUser();
         }
+    }
+
+    private boolean checkDrugInput(){
+        String drug = binding.drugInput.getText().toString();
+        if(drug.equals("Cannabis"))
+            return false;
+        else if (drug.equals("Meth"))
+            return false;
+        else if (drug.equals("Heroin"))
+            return false;
+        else
+            return true;
+    }
+
+    private boolean checkDosageInput(){
+        String drug = binding.dosageInput.getText().toString();
+        if(drug.equals("Occasionally"))
+            return false;
+        else if (drug.equals("Every Day"))
+            return false;
+        else if (drug.equals("Rarely"))
+            return false;
+        else
+            return true;
     }
 
     private void registerUser() {
@@ -168,9 +201,8 @@ public class PatientRegistrationActivity extends AppCompatActivity {
                     preferenceManager.putString(Constants.KEY_USERNAME, binding.usernameInput.getText().toString());
                     preferenceManager.putString(Constants.KEY_USER_TYPE, Constants.PATIENT_USER_TYPE);
 
-                    Intent intent = new Intent(getApplicationContext(), PatientScreeeningActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
+                    savePersonalInformation();
+
                 }).addOnFailureListener(e -> {
                     binding.nextButton.setVisibility(View.VISIBLE);
                     binding.signUpProgressBar.setVisibility(View.INVISIBLE);
@@ -179,5 +211,25 @@ public class PatientRegistrationActivity extends AppCompatActivity {
 
     }
 
+    private void savePersonalInformation(){
+
+        preferenceManager.putString(Constants.AGE_INFORMATION, binding.ageInput.getText().toString());
+        preferenceManager.putString(Constants.DRUG, binding.drugInput.getText().toString());
+        preferenceManager.putString(Constants.DOSAGE, binding.dosageInput.getText().toString());
+
+        Intent intent = new Intent(getApplicationContext(), PatientScreeeningActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
 }
 

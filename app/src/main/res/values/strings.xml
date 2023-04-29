@@ -199,4 +199,51 @@
         <item>rarely </item>
     </string-array>
 
+    <string-array name="symptom_category_01">
+        <item>Irritability</item>
+        <item>anger, or aggression</item>
+        <item>nervousness or anxiety</item>
+        <item>sleep difficulty</item>
+        <item>decreased appetite or weight loss</item>
+        <item>restlessness</item>
+        <item>depressed mood</item>
+        <item>abdominal pain</item>
+        <item>Shakiness/tremors</item>
+        <item>Sweating</item>
+        <item>Fever</item>
+        <item>Chills</item>
+        <item>Headache</item>
+    </string-array>
+
+    <string-array name="symptom_category_02">
+        <item>Fast pulse</item>
+        <item>Increased breathing rate</item>
+        <item>Increased blood pressure</item>
+        <item>Elevated body temperature</item>
+        <item>Sleep disturbances such as insomnia</item>
+        <item>Dilated pupils</item>
+        <item>Unusually heightened reflexes</item>
+        <item>Sweating</item>
+        <item>Goosebumps</item>
+        <item>Watery discharge from eyes and nose</item>
+        <item>Muscle spasms, cramps, and/or pain</item>
+        <item>Bone pain</item>
+        <item>Nausea and/or vomiting</item>
+        <item>Diarrhea</item>
+    </string-array>
+
+    <string-array name="symptom_category_03">
+        <item>Nausea</item>
+        <item>Abdominal cramping</item>
+        <item>Sweating</item>
+        <item>No energy</item>
+        <item>Depression</item>
+        <item>Anxiety</item>
+        <item>Fatigue</item>
+        <item>Muscle aches</item>
+        <item>Shaking</item>
+        <item>Tremors</item>
+        <item>Drug cravings</item>
+    </string-array>
+
 </resources>

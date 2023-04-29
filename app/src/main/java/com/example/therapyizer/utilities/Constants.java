@@ -45,4 +45,8 @@ public class Constants {
         headers.put(Constants.REMOTE_MSG_CONTENT_TYPE, "application/json");
         return headers;
     }
+
+    public static final String AGE_INFORMATION = "age_information";
+    public static final String DRUG = "drug";
+    public static final String DOSAGE = "dosage";
 }
