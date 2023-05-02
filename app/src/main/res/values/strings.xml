@@ -103,32 +103,54 @@
     <string-array name="patient_knowledge_hub_books_titles">
         <item>Cognitive, Clinical and Neural aspects of drug addiction</item>
         <item>Drugs addiction and the brain</item>
-        <item>Sample title 3</item>
+    </string-array>
+
+    <string-array name="patient_knowledge_hub_books_authors">
+        <item>Ahmed A. Moustafa · 2020</item>
+        <item>George F. Koob, ‎Michael A. Arends, ‎Michel Le Moal · 2014 </item>
+    </string-array>
+
+    <string-array name="patient_knowledge_hub_books_description">
+        <item> Dr. Moustafa takes this book one-step further by reviewing the psychological causes of relapse..</item>
+        <item>The book provides a detailed overview of the pathophysiology of the disease.</item>
     </string-array>
 
     <string-array name="patient_knowledge_hub_articles_titles">
         <item>Drug Abuse and addiction</item>
-        <item>Another Article</item>
-        <item>Sample title 3</item>
+        <item>Understanding Drug Use and Addiction DrugFacts</item>
+        <item>Article on Drug Addiction and Youth</item>
+    </string-array>
+
+    <string-array name="patient_knowledge_hub_articles_authors">
+        <item>HelpGuide.org</item>
+        <item>DrugFacts</item>
+        <item>The Pathway Program</item>
+    </string-array>
+
+    <string-array name="patient_knowledge_hub_articles_description">
+        <item>Do you or someone you love have a problem with substance abuse? Explore the warning signs and how to get the best help.</item>
+        <item>Provides an overview of drug use and addiction, including what happens in the brain during drug use, why some people become addicted while ...</item>
+        <item>An article on teen drug addiction, written by Joshua Azevedo and published in Together AZ, an addiction and recovery newspaper in Scottsdale, Arizona.</item>
     </string-array>
 
     <string-array name="patient_knowledge_hub_journals_titles">
-        <item>Journal Title 01</item>
-        <item>Journal Title 02</item>
-        <item>Sample title 3</item>
+        <item>Journal of Drug Abuse</item>
+        <item>Journal of Addiction Medicine</item>
+        <item>Journal of Drug Issues</item>
     </string-array>
 
-    <string-array name="patient_knowledge_hub_books_authors">
-        <item>Author 01</item>
-        <item>Author 02</item>
-        <item>Author 03</item>
+    <string-array name="patient_knowledge_hub_journals_authors">
+        <item>Prime Scholars</item>
+        <item>American society of Addiction Medicine</item>
+        <item>Sage Journals</item>
     </string-array>
 
-    <string-array name="patient_knowledge_hub_books_description">
-        <item>Description 01</item>
-        <item>Description 02</item>
-        <item>Description 03</item>
+    <string-array name="patient_knowledge_hub_journals_description">
+        <item>Journal of Drug Abuse is aim to publish foster activities in the field of drug abuse and the burden associated with mental, neurological and substance use disorders, and to promote mental health worldwide.</item>
+        <item>This journal by the American Socirty of Addiction Medicine aims to provide a comprehensive set of Journals that can be used for the treatment and indentification of Drug addiction</item>
+        <item>Journal of Drug Issues (JDI), published quarterly, has been dedicated since its inception to providing a professional and scholarly forum centered on the national and international problems associated with drugs, especially illicit drugs.</item>
     </string-array>
+
 
     <string-array name="professional_nav_card_titles">
         <item>Clients</item>
