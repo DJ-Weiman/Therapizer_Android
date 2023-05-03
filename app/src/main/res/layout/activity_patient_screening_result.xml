@@ -39,11 +39,13 @@
                 android:textColor="@color/black"/>
 
             <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/screeningResultProgressBar"
                 android:layout_width="match_parent"
                 android:paddingStart="30sp"
                 android:paddingEnd="30sp"
                 android:layout_height="40sp"
-                android:layout_marginTop="60sp"/>
+                android:layout_marginTop="60sp"
+                android:max="6"/>
 
             <TextView
                 android:id="@+id/screeningNumericalResult"

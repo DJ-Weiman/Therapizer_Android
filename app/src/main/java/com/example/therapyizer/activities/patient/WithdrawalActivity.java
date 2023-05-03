@@ -97,9 +97,8 @@ public class WithdrawalActivity extends AppCompatActivity {
             // Runs model inference and gets result.
             SymptomModel.Outputs outputs = model.process(inputFeature0);
             TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
-            
-            float[] prediction = outputFeature0.getFloatArray();
-            returnPrediction(prediction);
+
+            returnPrediction(outputFeature0.getFloatArray());
 
             // Releases model resources if no longer used.
             model.close();
