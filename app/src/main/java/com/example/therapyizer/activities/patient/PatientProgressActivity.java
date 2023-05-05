@@ -38,7 +38,8 @@ public class PatientProgressActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_patient_progress);
+        binding = DataBindingUtil.setContentView(this,
+                R.layout.activity_patient_progress);
 
         db = Room.databaseBuilder(getApplicationContext(),
                         UserGoalDatabase.class,
@@ -46,15 +47,13 @@ public class PatientProgressActivity extends AppCompatActivity {
                 .allowMainThreadQueries()
                 .build();
 
-        //db.userGoalDao().updateProgress(1, 9);
-
         getData();
         setUpSoberStreak();
         setPatientProgressGoalModels();
         setUpButtons();
     }
 
-    private void setUpButtons(){
+    private void setUpButtons() {
         PatientProgressAdapter adapter = new PatientProgressAdapter(this, patientProgressGoalModels);
         binding.patientProgressGoalsRV.setAdapter(adapter);
         binding.patientProgressGoalsRV.setLayoutManager(new LinearLayoutManager(this));
@@ -72,19 +71,18 @@ public class PatientProgressActivity extends AppCompatActivity {
             intent.putExtra("PROGRESS", userGoalList.get(0).current_progress);
             startActivityForResult(intent, 1);
         });
-
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
-            if(resultCode == RESULT_OK) {
+            if (resultCode == RESULT_OK) {
                 Log.d("valChecker", String.valueOf(data.getStringExtra("UPDATE_SELECTION")));
 
-                if(data.getStringExtra("UPDATE_SELECTION").equals("Yes")){
+                if (data.getStringExtra("UPDATE_SELECTION").equals("Yes")) {
                     int current_progress = userGoalList.get(0).current_progress;
-                    db.userGoalDao().updateProgress(1, current_progress+1);
+                    db.userGoalDao().updateProgress(1, current_progress + 1);
                 }
 
                 getData();
@@ -93,9 +91,9 @@ public class PatientProgressActivity extends AppCompatActivity {
         }
     }
 
-    private void setPatientProgressGoalModels(){
-        for(UserGoal goal: userGoalList){
-            if(goal.goalId == 1)
+    private void setPatientProgressGoalModels() {
+        for (UserGoal goal : userGoalList) {
+            if (goal.goalId == 1)
                 continue;
             patientProgressGoalModels.add(new PatientProgressGoalModel(
                     goal.goalTitle,
@@ -105,7 +103,7 @@ public class PatientProgressActivity extends AppCompatActivity {
         }
     }
 
-    private void setUpSoberStreak(){
+    private void setUpSoberStreak() {
         UserGoal soberGoal = userGoalList.get(0);
         int currentProgress = soberGoal.current_progress;
         int daysToComplete = soberGoal.daysToComplete;
@@ -114,31 +112,23 @@ public class PatientProgressActivity extends AppCompatActivity {
         binding.soberProgressBar.setMax(daysToComplete);
         binding.soberProgressBar.setProgressCompat(currentProgress, true);
 
-        if(currentProgress == daysToComplete){
+        if (currentProgress == daysToComplete) {
             binding.trackerRewardButton.setVisibility(View.VISIBLE);
             binding.dailyUpdateButton.setVisibility(View.GONE);
         }
-
     }
 
-    private void getData(){
+    private void getData() {
         userGoalList = db.userGoalDao().getAllUSerGoals();
-        if(userGoalList.isEmpty())
+        if (userGoalList.isEmpty())
             insertGoals();
     }
 
-    private void insertGoals(){
+    private void insertGoals() {
         UserGoal goal1 = new UserGoal("Sober streak", 10, 9);
         UserGoal goal2 = new UserGoal("Cycling", 10, 5);
         UserGoal goal3 = new UserGoal("Meditating", 15, 7);
         UserGoal goal4 = new UserGoal("Therapy", 12, 6);
-
         db.userGoalDao().insertAll(goal1, goal2, goal3, goal4);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
     }
 }

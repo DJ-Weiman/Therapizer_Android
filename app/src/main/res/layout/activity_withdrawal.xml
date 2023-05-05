@@ -74,24 +74,16 @@
                         android:layout_gravity="center"/>
 
                     <TextView
+                        android:id="@+id/timeFrame"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/number_01_"
-                        android:fontFamily="@font/nunito_bold_font"
-                        android:textColor="#AC4FFF"
-                        android:textSize="50sp"
                         android:layout_gravity="center"
-                        android:paddingTop="15sp"
-                        android:paddingBottom="15sp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/day_s_text"
                         android:fontFamily="@font/nunito_bold_font"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
-                        android:layout_gravity="center"/>
+                        android:paddingTop="15sp"
+                        android:paddingBottom="15sp"
+                        android:text="@string/number_01_"
+                        android:textColor="#AC4FFF"
+                        android:textSize="50sp" />
 
                 </LinearLayout>
 

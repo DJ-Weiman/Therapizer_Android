@@ -43,13 +43,9 @@ public class TherapyActivity extends AppCompatActivity implements OnlineCallInte
         binding.topActionBar.backButton.setOnClickListener(view -> onBackPressed());
         preferenceManager = new PreferenceManager(getApplicationContext());
 
-
         adapter = new OnlineCallNavAdapter(this, this, onlineCallModels);
         binding.therapyRecyclerView.setAdapter(adapter);
         binding.therapyRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-
-        Log.d("tokenChecker", "aksdbnkaskdn");
 
         setUpOnlineCallModels();
     }
@@ -63,10 +59,12 @@ public class TherapyActivity extends AppCompatActivity implements OnlineCallInte
                     String myUserId = preferenceManager.getString(Constants.KEY_USER_ID);
                     if(task.isSuccessful() && task.getResult() != null){
                         for(QueryDocumentSnapshot documentSnapshot : task.getResult()){
-                            if(documentSnapshot.getString(Constants.KEY_USER_TYPE).equals(Constants.PROFESSIONAL_USER_TYPE)){
+                            if(documentSnapshot.getString(Constants.KEY_USER_TYPE).equals(
+                                    Constants.PROFESSIONAL_USER_TYPE)){
                                 onlineCallModels.add(new OnlineCallModel(
                                         documentSnapshot.getId(),
-                                        documentSnapshot.getString(Constants.KEY_FIRST_NAME) + " " + documentSnapshot.getString(Constants.KEY_LAST_NAME),
+                                        documentSnapshot.getString(Constants.KEY_FIRST_NAME)
+                                                + " " + documentSnapshot.getString(Constants.KEY_LAST_NAME),
                                         documentSnapshot.getString(Constants.KEY_PROFESSION),
                                         documentSnapshot.getString(Constants.KEY_FCM_TOKEN)
                                 ));
@@ -79,13 +77,8 @@ public class TherapyActivity extends AppCompatActivity implements OnlineCallInte
 
     @Override
     public void onCallClicked(OnlineCallModel onlineCallModel) {
-
-        Log.d("tokenChecker", String.valueOf(onlineCallModel.getFcm_Token()));
-        Log.d("tokenChecker", "aksdbnkaskdn");
-
         Intent intent = new Intent(getApplicationContext(), OutgoingInvitationActivity.class);
         intent.putExtra("user", onlineCallModel);
         startActivity(intent);
-
     }
 }
