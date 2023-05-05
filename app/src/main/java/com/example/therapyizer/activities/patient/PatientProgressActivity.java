@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.therapyizer.R;
@@ -32,6 +33,11 @@ public class PatientProgressActivity extends AppCompatActivity {
         binding.patientProgressGoalsRV.setLayoutManager(new LinearLayoutManager(this));
         binding.topActionBar.backButton.setOnClickListener(view -> {
             onBackPressed();
+        });
+
+        binding.trackerRewardButton.setOnClickListener(view -> {
+            Intent intent = new Intent(getApplicationContext(), PatientGoalRewardActivity.class);
+            startActivity(intent);
         });
     }
 

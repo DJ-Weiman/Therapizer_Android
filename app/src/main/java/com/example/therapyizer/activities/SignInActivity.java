@@ -66,10 +66,8 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void signIn() {
-
         binding.loginButton.setVisibility(View.INVISIBLE);
         binding.signInProgressBar.setVisibility(View.VISIBLE);
-
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         database.collection(Constants.KEY_COLLECTION_USERS)
                 .whereEqualTo(Constants.KEY_EMAIL, binding.emailInput.getText().toString())
@@ -78,7 +76,6 @@ public class SignInActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
-
                         if (task.isSuccessful() && task.getResult() != null && task.getResult().getDocuments().size() > 0) {
                             DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
                             preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
@@ -94,7 +91,6 @@ public class SignInActivity extends AppCompatActivity {
                             } else {
                                 intent = new Intent(getApplicationContext(), PatientMainPageActivity.class);
                             }
-
                             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                         } else {

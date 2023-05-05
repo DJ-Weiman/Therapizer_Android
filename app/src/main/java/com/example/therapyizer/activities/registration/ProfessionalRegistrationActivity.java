@@ -111,10 +111,8 @@ public class ProfessionalRegistrationActivity extends AppCompatActivity {
     }
 
     private void registerUser() {
-
         binding.nextButton.setVisibility(View.INVISIBLE);
         binding.signUpProgressBar.setVisibility(View.VISIBLE);
-
         FirebaseFirestore database = FirebaseFirestore.getInstance();
         HashMap<String, Object> user = new HashMap<>();
 
@@ -131,7 +129,6 @@ public class ProfessionalRegistrationActivity extends AppCompatActivity {
         database.collection(Constants.KEY_COLLECTION_USERS)
                 .add(user)
                 .addOnSuccessListener(documentReference -> {
-
                     preferenceManager.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
                     preferenceManager.putString(Constants.KEY_USER_ID, documentReference.getId());
                     preferenceManager.putString(Constants.KEY_FIRST_NAME, binding.firstNameInput.getText().toString());

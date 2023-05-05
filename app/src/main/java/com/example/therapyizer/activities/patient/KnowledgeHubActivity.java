@@ -80,9 +80,12 @@ public class KnowledgeHubActivity extends AppCompatActivity implements PatientNa
     }
 
     private void setUpRecyclerView(){
-        KHBooksRecyclerViewAdapter adapter = new KHBooksRecyclerViewAdapter(KnowledgeHubActivity.this, knowledgeHubBooksModels, this);
+        KHBooksRecyclerViewAdapter adapter = new KHBooksRecyclerViewAdapter(KnowledgeHubActivity.this,
+                knowledgeHubBooksModels,
+                this);
         binding.knowledgeHubBooksRecyclerView.setAdapter(adapter);
-        binding.knowledgeHubBooksRecyclerView.setLayoutManager(new LinearLayoutManager(KnowledgeHubActivity.this));
+        binding.knowledgeHubBooksRecyclerView.setLayoutManager(new LinearLayoutManager(
+                KnowledgeHubActivity.this));
     }
     private void setUpKnowledgeHubBooksModels(){
 
@@ -141,7 +144,6 @@ public class KnowledgeHubActivity extends AppCompatActivity implements PatientNa
         if(this.khTab == KHTab.BOOKS){
             Intent book1Intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.sciencedirect.com/book/9780128169797/cognitive-clinical-and-neural-aspects-of-drug-addiction"));
             Intent book2Intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.sciencedirect.com/book/9780123869371/drugs-addiction-and-the-brain"));
-
             switch(position){
                 case 0:
                     startActivity(book1Intent);
@@ -154,7 +156,6 @@ public class KnowledgeHubActivity extends AppCompatActivity implements PatientNa
             Intent article1Intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.helpguide.org/articles/addictions/drug-abuse-and-addiction.htm"));
             Intent article2Intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://nida.nih.gov/publications/drugfacts/understanding-drug-use-addiction"));
             Intent article3Intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://thepathwayprogram.com/drug-addiction/"));
-
             switch(position){
                 case 0:
                     startActivity(article1Intent);
@@ -170,7 +171,6 @@ public class KnowledgeHubActivity extends AppCompatActivity implements PatientNa
             Intent journal1Intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.primescholars.com/drug-abuse.html"));
             Intent journal2Intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://journals.lww.com/journaladdictionmedicine/pages/default.aspx"));
             Intent journal3Intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://journals.sagepub.com/home/jod"));
-
             switch(position){
                 case 0:
                     startActivity(journal1Intent);

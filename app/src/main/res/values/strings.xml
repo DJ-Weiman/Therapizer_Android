@@ -83,6 +83,7 @@
     <string name="notes_text">Notes</string>
     <string name="appointments_text">Appointments</string>
     <string name="screening_text">Screening</string>
+    <string name="milestone_description">You\'ve reached the 10 day milestone. Get a free therapy session now!</string>
 
     <string-array name="patient_nav_titles">
         <item>Progress</item>

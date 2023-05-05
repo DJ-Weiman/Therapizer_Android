@@ -143,12 +143,13 @@
                         android:layout_height="20sp"
                         android:min="0"
                         android:max="10"
-                        android:progress="5"
+                        android:progress="10"
                         android:layout_marginTop="10sp"
                         app:layout_constraintTop_toBottomOf="@id/soberProgressText"
                         app:indicatorColor="@color/progress_tracker_green"/>
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/trackerRewardButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:backgroundTint="@color/appThemePurple"

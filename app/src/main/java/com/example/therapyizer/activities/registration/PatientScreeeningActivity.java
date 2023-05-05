@@ -41,7 +41,7 @@ public class PatientScreeeningActivity extends AppCompatActivity implements Scre
                 Toast.makeText(this, "Please Make sure you have answered all the above questions", Toast.LENGTH_SHORT).show();
             } else {
                 Intent intent = new Intent(getApplicationContext(), PatientScreeningResultActivity.class);
-//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
                 int numberOfPositives = 0;
                 for(int i=0; i< answerList.size(); i++){

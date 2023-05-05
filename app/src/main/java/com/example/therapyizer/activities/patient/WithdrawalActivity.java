@@ -21,9 +21,7 @@ import java.nio.ByteBuffer;
 public class WithdrawalActivity extends AppCompatActivity {
 
     ActivityWithdrawalBinding binding;
-
     PreferenceManager preferenceManager;
-
     float predictionVal;
 
     @Override
@@ -31,9 +29,7 @@ public class WithdrawalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_withdrawal);
-
         preferenceManager = new PreferenceManager(getApplicationContext());
-
         binding.topActionBar.backButton.setOnClickListener(view -> onBackPressed());
 
         ByteBuffer byteBuffer = ByteBuffer.allocate(3*4);
@@ -42,13 +38,11 @@ public class WithdrawalActivity extends AppCompatActivity {
         byteBuffer.putFloat(getDosageValue());
 
         getPrediction(byteBuffer);
-
         setSymptomsList();
     }
 
     private void setSymptomsList(){
         String[] symptomList;
-
         if(predictionVal == 0f){
             symptomList = getResources().getStringArray(R.array.symptom_category_01);
         } else if (predictionVal == 1f) {
@@ -56,9 +50,10 @@ public class WithdrawalActivity extends AppCompatActivity {
         }else {
             symptomList = getResources().getStringArray(R.array.symptom_category_03);
         }
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, R.layout.activity_symptom_list_item, R.id.symptomText, symptomList);
-
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
+                R.layout.activity_symptom_list_item,
+                R.id.symptomText,
+                symptomList);
         binding.withdrawalSymptomsListView.setAdapter(arrayAdapter);
     }
 
@@ -91,7 +86,8 @@ public class WithdrawalActivity extends AppCompatActivity {
             SymptomModel model = SymptomModel.newInstance(this);
 
             // Creates inputs for reference.
-            TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 3}, DataType.FLOAT32);
+            TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 3},
+                    DataType.FLOAT32);
             inputFeature0.loadBuffer(byteBuffer);
 
             // Runs model inference and gets result.
@@ -99,8 +95,6 @@ public class WithdrawalActivity extends AppCompatActivity {
             TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
 
             returnPrediction(outputFeature0.getFloatArray());
-
-            // Releases model resources if no longer used.
             model.close();
         } catch (IOException e) {
             // TODO Handle the exception
